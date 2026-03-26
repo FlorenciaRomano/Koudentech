@@ -6,7 +6,8 @@ import { useEffect, useRef, useState } from 'react';
 
 const Counter = ({ value, suffix = "" }: { value: number; suffix?: string }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  // CORRECCIÓN: Bajamos el margin de -100px a -10% para que en mobile dispare la animación correctamente
+  const isInView = useInView(ref, { once: true, margin: "-10%" });
   const [displayValue, setDisplayValue] = useState(0);
 
   useEffect(() => {
@@ -28,7 +29,7 @@ const aboutData = [
     id: 'mision',
     title: "Misión",
     text: "Fabricación de gabinetes metálicos y bancos de capacitores que cumplen con la normativa técnica vigente.",
-    desktop: { x: -320, y: 0, rotate: -2 }, // Posición a la izquierda del centro
+    desktop: { x: -320, y: 0, rotate: -2 }, 
     tablet: { x: -240, y: 20, rotate: -6 }, 
     icon: <Target className="text-emerald-500 w-6 h-6" />
   },
@@ -36,7 +37,7 @@ const aboutData = [
     id: 'vision',
     title: "Visión",
     text: "Ser una empresa altamente reconocida, sistematizada en mejora continua y generadora de valor.",
-    desktop: { x: 0, y: 40, rotate: 3 }, // Justo al centro
+    desktop: { x: 0, y: 40, rotate: 3 }, 
     tablet: { x: 0, y: -10, rotate: 0 }, 
     icon: <Eye className="text-sky-500 w-6 h-6" />
   },
@@ -44,7 +45,7 @@ const aboutData = [
     id: 'valores',
     title: "Valores",
     text: "Integridad y responsabilidad guían nuestro trabajo para ofrecer soluciones eléctricas precisas.",
-    desktop: { x: 320, y: 0, rotate: -1 }, // Posición a la derecha del centro
+    desktop: { x: 320, y: 0, rotate: -1 }, 
     tablet: { x: 240, y: 20, rotate: 6 }, 
     icon: <Diamond className="text-blue-500 w-6 h-6" />
   },
@@ -73,10 +74,8 @@ export default function AboutUs() {
     <section id="sobre-nosotros" className="relative py-20 lg:py-32 bg-sky-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
-        {/* CONTENEDOR UNIFICADO Y CENTRADO */}
         <div className="flex flex-col items-center text-center">
           
-          {/* --- BLOQUE DE TEXTO --- */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -105,7 +104,6 @@ export default function AboutUs() {
             </div>
           </motion.div>
 
-          {/* --- CONTENEDOR DE TARJETAS CENTRADO --- */}
           <div className={`relative w-full flex flex-col items-center gap-6 
             ${isMobile ? 'h-auto' : 'h-[300px] lg:h-[350px]'}`}>
             
@@ -145,7 +143,6 @@ export default function AboutUs() {
         </div>
       </div>
 
-      {/* Decoración de fondo simétrica */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-64 bg-sky-100/40 blur-[100px] rounded-full z-0" />
     </section>
   );
