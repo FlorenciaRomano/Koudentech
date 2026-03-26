@@ -9,7 +9,7 @@ const targets = [
   { title: "Empresas industriales", img: "/assets/empresas-industriales.jpg" },
   { title: "Cadenas comerciales", img: "/assets/cadenas-comerciales.jpg" },
   { title: "Desarrollos inmobiliarios", img: "/assets/desarrollos-inmobiliarios.webp" },
-  { title: "Plantas de energía", img: "/assets/hero-5.jfif" },
+  { title: "Plantas de energía", img: "/assets/plantas-energia.jpg" },
   { title: "Infraestructura pública", img: "/assets/hero-4.jfif" },
   { title: "Centros Logísticos", img: "/assets/centros-logisticos.webp" }, 
   { title: "Hotelería Premium", img: "/assets/hoteleria.jpg" },
